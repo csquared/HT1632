@@ -31,7 +31,7 @@ class HT1632 {
   HT1632(int8_t data, int8_t wr, int8_t cs, int8_t rd = -1);
 
   void begin(uint8_t type);
-  
+
   void clrPixel(uint16_t i);
   void setPixel(uint16_t i);
 
@@ -42,7 +42,7 @@ class HT1632 {
   void fillScreen();
   void writeScreen();
   void dumpScreen();
-  
+
  private:
   int8_t WIDTH, HEIGHT;
   int8_t _data, _cs, _wr, _rd;
@@ -56,10 +56,14 @@ class HT1632LEDMatrix : public Print {
  public:
   HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1);
   HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1, uint8_t cs2);
-  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1, 
+  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1,
 		  uint8_t cs, uint8_t cs3);
-  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1, 
+  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1,
 		  uint8_t cs2, uint8_t cs3, uint8_t cs4);
+  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1,
+		  uint8_t cs2, uint8_t cs3, uint8_t cs4, uint8_t cs5);
+  HT1632LEDMatrix(uint8_t data, uint8_t wr, uint8_t cs1,
+		  uint8_t cs2, uint8_t cs3, uint8_t cs4, uint8_t cs5, uint8_t cs6);
 
  void begin(uint8_t type);
  void clearScreen(void);
@@ -91,7 +95,7 @@ class HT1632LEDMatrix : public Print {
 #endif
   void drawChar(uint8_t x, uint8_t y, char c, uint16_t color, uint8_t size);
 
-  void drawBitmap(uint8_t x, uint8_t y, 
+  void drawBitmap(uint8_t x, uint8_t y,
 		  const uint8_t *bitmap, uint8_t w, uint8_t h,
 		  uint8_t color);
 
